@@ -20,6 +20,20 @@ body {
   padding: 2.0em 0.5em;
 }
 
+/* Utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  border: 0;
+}
+
 /* Typography */
 /* https://fonts.google.com/
 Merriweather - light - headlines
@@ -44,45 +58,10 @@ a:active, a:hover {
     color: lime;
 }
 
-/* Buttons */
-/* NOTE - user-select won't validate */
-.button {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  vertical-align: middle;
-  z-index: 1;
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
-  height: 54px;
-  line-height: 54px;
-  text-decoration: none;
-  color: #fff !important;
-  background-color: green;
-  text-align: center;
-  letter-spacing: .5px;
-  padding: 0 2rem;
-  border: none;
-  border-radius: 2px;
-  font-size: 1rem;
-  outline: 0;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
-}
-
-.button:hover {
-  background-color: lime;
-  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
-  outline: 0;
-}
-
 /* Navigation */
+nav {
+}
+
 nav .container {
   padding: 1.0em 0.5em;
 }
@@ -105,13 +84,17 @@ nav ul li {
 /* Header */
 header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url('../images/tennis_court.jpg') no-repeat center center;
+  url('../images/outdoors.jpg') no-repeat center center;
   background-size: cover;
 }
 
 header .container {
     display: flex;
     justify-content: center;
+}
+
+header.img {
+	width: 20px;
 }
 
 .branding {
@@ -121,13 +104,9 @@ header .container {
   width: 100%;
 }
 
-.branding h1, .branding p {
-  color: #ffffff;
-  text-shadow: 1px 1px 2px #000000;
-}
-
-.branding h1 {
-    font-size: 24px;
+.branding img {
+	width: 20em;
+	padding-right: 50px;
 }
 
 /* Highlights */
@@ -145,50 +124,55 @@ header .container {
   background-color: white;
   color: DarkGreen;
   padding: 15px 30px;
-  margin: 2.0em 5px 1.0em;
-  flex: 1 1 250px;
-  position: relative;
+  margin: 1.0em 10px 1.0em;
 }
 
-.highlights i {
-  color: #3d957d;
-  position: absolute;
-  top: -25px;
-  left: 43%;
+.highlights li {
+  color: DarkGreen;
+  text-align: left;
+  margin: 10px;
 }
 
-
-/* Form */
-/* form { display: static; }
-
-form .label {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 18px;
-  line-height: 2.0em;
+/* Gallery */
+.gallery {
 }
 
-form .input {
-  height: 50px;
-  margin: 0;
+.gallery h2, .gallery p {
+  color: #ffffff;
 }
 
-form .button {
-  display: block;
-  margin: 1.0em auto 0;
+.gallery h2 {
+  font-size: 24px;
+  margin-bottom: 0;
 }
 
-input[type="text"] {
-    padding: 2px 2px 4px 4px;
-    border: 1px solid #a68659;
-    border-radius: 2px;
-    box-shadow: inset 0 0 2px #fff;
-    background: #f9f8f5;
-    width: 100%;
-    display: block;
-    line-height: 2.0em;
-} */
+h2 + p {
+  margin-top: 0.5em;
+}
 
+.gallery section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.gallery figure {
+  margin: 0 0.5em 1.0em;
+  padding: 0;
+  border-radius: 5px;
+  background: white;	  
+}
+
+.gallery figcaption {
+  text-align: center;
+  padding-left: 0.5em;
+  font-size: 14px;
+  margin: 0.5em;
+}
+
+.gallery img:hover {
+  opacity: 0.9;
+}
 
 /* Footer */
 footer {
